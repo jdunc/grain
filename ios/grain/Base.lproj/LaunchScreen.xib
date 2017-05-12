@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="615" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunrise-in-the-mountains" translatesAutoresizingMaskIntoConstraints="NO" id="UOV-uW-PkV">
+                    <rect key="frame" x="-143" y="0.0" width="900.66666666666663" height="480"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="UOV-uW-PkV" secondAttribute="height" multiplier="15:8" id="Va9-9u-PCg"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qAh-ET-Lyj">
+                    <rect key="frame" x="0.0" y="0.0" width="615" height="480"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="grain" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
+                    <rect key="frame" x="189.66666666666669" y="99.999999999999986" width="236.00000000000006" height="119.66666666666664"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="100"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="scientifically proven actions to help you:" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uMH-uf-Vyr">
+                    <rect key="frame" x="93" y="251.66666666666669" width="430" height="29.000000000000057"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="reduce stress" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GgG-Om-GFb">
+                    <rect key="frame" x="234" y="296.66666666666669" width="148" height="29"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enter the flow" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xV-LO-7PK">
+                    <rect key="frame" x="232.66666666666669" y="341.66666666666669" width="151.00000000000006" height="29"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="be present" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNJ-uE-Q12">
+                    <rect key="frame" x="249" y="386.66666666666669" width="118" height="29"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7xV-LO-7PK" firstAttribute="top" secondItem="GgG-Om-GFb" secondAttribute="bottom" constant="16" id="1gA-tc-5Y6"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="7YC-wV-voh"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7ge-GS-D5g"/>
+                <constraint firstItem="qAh-ET-Lyj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CbK-K1-WmH"/>
+                <constraint firstItem="GgG-Om-GFb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DIo-Xm-Wvi"/>
+                <constraint firstItem="7xV-LO-7PK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FjQ-n3-1kJ"/>
+                <constraint firstAttribute="bottom" secondItem="qAh-ET-Lyj" secondAttribute="bottom" id="IKo-fE-Itp"/>
+                <constraint firstItem="YNJ-uE-Q12" firstAttribute="top" secondItem="7xV-LO-7PK" secondAttribute="bottom" constant="16" id="KlQ-jL-3fl"/>
+                <constraint firstAttribute="trailing" secondItem="qAh-ET-Lyj" secondAttribute="trailing" id="PNd-lS-Mhq"/>
+                <constraint firstItem="qAh-ET-Lyj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TY9-c5-DjD"/>
+                <constraint firstItem="uMH-uf-Vyr" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="32" id="UPc-k0-xjb"/>
+                <constraint firstItem="uMH-uf-Vyr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YOM-sS-CII"/>
+                <constraint firstItem="YNJ-uE-Q12" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Zwu-s3-4W4"/>
+                <constraint firstItem="qAh-ET-Lyj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dfE-KX-rnr"/>
+                <constraint firstItem="GgG-Om-GFb" firstAttribute="top" secondItem="uMH-uf-Vyr" secondAttribute="bottom" constant="16" id="lSm-D6-ViI"/>
+                <constraint firstAttribute="bottom" secondItem="UOV-uW-PkV" secondAttribute="bottom" id="mhl-AY-PkI"/>
+                <constraint firstItem="UOV-uW-PkV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xHW-f7-7hS"/>
+                <constraint firstItem="UOV-uW-PkV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zT0-TL-5iN"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="833.5" y="461"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="sunrise-in-the-mountains" width="640" height="360"/>
+    </resources>
+</document>
