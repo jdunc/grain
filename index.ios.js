@@ -16,15 +16,15 @@ import {
 } from 'react-native';
 import RNShakeEventIOS from 'react-native-shake-event';
 import NotificationsIOS from 'react-native-notifications';
+// import Icon from 'react-native-vector-icons/FontAwesome';
+let grains = require('./grains');
 
 export default class grain extends Component {
 
   constructor (props) {
     super(props)
     this.state = {
-      grains: [
-'brush your teeth with the opposite hand ','lay down on the ground and say "I got this" really loudly','only make left turns for 30 minutes','Pay for a strangers coffee','shake hands with somone for 3 seconds too long','Dont shake hands for a day',' bow appropriately (video link)','Send a message to somone who you havent spoken to in over a year','Do the hokey pokey (video)','Lip sync for 30 seconds to a song your vibing with right now','Laugh for no reason for 15 seconds','Go for a morning walk in silence','Have a cold shower','Spend a few minutes looking at your own eyes in the mirror','Think only good throughts before going to bed','Write down nagging thoughts and throw them away','Ask people what your strenghs and weaknesses are','Stop waiting around for the right time','Take a photo a day on your way to work for a month',
-      ],
+      grains: grains,
       displayNumber: 0,
     }
     this.changeGrain = this.changeGrain.bind(this);
@@ -34,7 +34,6 @@ export default class grain extends Component {
     this.setState({
       newNumber: notification._data.grainNumber
     });
-    this.changeGrain();
     // AlertIOS.alert(
     //   'Try This!',
     //   this.state.grains[notification.grainNumber],
@@ -59,18 +58,17 @@ export default class grain extends Component {
     this.setState({
       newNumber: Math.floor(Math.random() * this.state.grains.length),
     });
-    // this._onLocalNotification()
-    PushNotificationIOS.scheduleLocalNotification({
-      fireDate: new Date(Date.now() + (1 * 1000)).getTime(),
-      alertBody: 'in this moment, rediscover your presence: ' + this.state.grains[this.state.newNumber],
-      alertTitle: "~ enter the flow ~",
-      alertAction: "Click here to open",
-      soundName: "chime.aiff",
-      category: "actionItem",
-      userInfo: { 
-      'grainNumber': this.state.newNumber,
-      },
-    })
+    // PushNotificationIOS.scheduleLocalNotification({
+    //   fireDate: new Date(Date.now() + (1 * 1000)).getTime(),
+    //   alertBody: 'in this moment, rediscover your presence: ' + this.state.grains[this.state.newNumber],
+    //   alertTitle: "~ enter the flow ~",
+    //   alertAction: "Click here to open",
+    //   soundName: "chime.aiff",
+    //   category: "actionItem",
+    //   userInfo: { 
+    //   'grainNumber': this.state.newNumber,
+    //   },
+    // })
   }
   
   componentWillMount() {
@@ -131,6 +129,10 @@ _onLocalNotification(notification){
             color="#841584"
             style={styles.nextGrain}
           />
+          <View style={styles.menu}>
+            {/* <Icon name="rocket" size={30} color="#900" /> */}
+
+          </View>
       </View>
     );
   }
@@ -144,7 +146,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   welcomeBox: {
-    flex: 1,
+    flex: 15,
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -160,6 +162,11 @@ const styles = StyleSheet.create({
   },
   nextGrain: {
     flex: 2
+  },
+  menu: {
+    flex: 1,
+    width: '100%',
+    backgroundColor: 'orange',
   }
 });
 
