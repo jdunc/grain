@@ -25,6 +25,8 @@
 		172E1D251EC257E800C56942 /* libRNNotifications.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E1D161EC2575A00C56942 /* libRNNotifications.a */; };
 		172E1D311EC25D6D00C56942 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 172E1D2E1EC25D2300C56942 /* libRCTPushNotification.a */; };
 		17534FD01EB7FC8200B50939 /* libRNShakeEvent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17534FC91EB7FA0100B50939 /* libRNShakeEvent.a */; };
+		17D4BC211ECE5BAC001797DC /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17D4BC201ECE5BA1001797DC /* FontAwesome.ttf */; };
+		17D4BC281ECE6247001797DC /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D4BC271ECE6214001797DC /* libRNVectorIcons.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -132,6 +134,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNShakeEvent;
+		};
+		17D4BC261ECE6214001797DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17D4BC221ECE6213001797DC /* RNVectorIcons.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5DBEB1501B18CEA900B34395;
+			remoteInfo = RNVectorIcons;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -285,6 +294,8 @@
 		172E1D271EC2591000C56942 /* RNNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNNotifications.h; path = "../node_modules/react-native-notifications/RNNotifications/RNNotifications.h"; sourceTree = "<group>"; };
 		172E1D281EC25D2300C56942 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
 		17534FAB1EB7FA0100B50939 /* RNShakeEvent.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNShakeEvent.xcodeproj; path = "../node_modules/react-native-shake-event/RNShakeEvent.xcodeproj"; sourceTree = "<group>"; };
+		17D4BC201ECE5BA1001797DC /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		17D4BC221ECE6213001797DC /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* grain-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "grain-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* grain-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "grain-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -305,6 +316,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D4BC281ECE6247001797DC /* libRNVectorIcons.a in Frameworks */,
 				172E1D311EC25D6D00C56942 /* libRCTPushNotification.a in Frameworks */,
 				172E1D251EC257E800C56942 /* libRNNotifications.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -479,6 +491,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		17D4BC231ECE6213001797DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17D4BC271ECE6214001797DC /* libRNVectorIcons.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +520,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				17D4BC221ECE6213001797DC /* RNVectorIcons.xcodeproj */,
 				172E1D281EC25D2300C56942 /* RCTPushNotification.xcodeproj */,
 				172E1CF81EC2575900C56942 /* RNNotifications.xcodeproj */,
 				17534FAB1EB7FA0100B50939 /* RNShakeEvent.xcodeproj */,
@@ -534,6 +555,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* grainTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				17D4BC201ECE5BA1001797DC /* FontAwesome.ttf */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -725,6 +747,10 @@
 					ProductGroup = 17534FAC1EB7FA0100B50939 /* Products */;
 					ProjectRef = 17534FAB1EB7FA0100B50939 /* RNShakeEvent.xcodeproj */;
 				},
+				{
+					ProductGroup = 17D4BC231ECE6213001797DC /* Products */;
+					ProjectRef = 17D4BC221ECE6213001797DC /* RNVectorIcons.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -819,6 +845,13 @@
 			fileType = archive.ar;
 			path = libRNShakeEvent.a;
 			remoteRef = 17534FC81EB7FA0100B50939 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		17D4BC271ECE6214001797DC /* libRNVectorIcons.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNVectorIcons.a;
+			remoteRef = 17D4BC261ECE6214001797DC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */ = {
@@ -956,6 +989,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				17D4BC211ECE5BAC001797DC /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

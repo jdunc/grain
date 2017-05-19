@@ -21,7 +21,7 @@ let grains = [
 'lip sync for 30 seconds to a song your vibing with right now',
 'listen to a song in a different langauge',
 'maintain eye contact with a stranger ',
-'only make left turns for 30 minutes',
+'only make left turns for 30 minutes, even while you walk',
 'part your hair on the opposite side or rub your head',
 'people watch for as long you can, see the beauty within every person who passes',
 'pick an accent different than your own and speak in it for 30 minutes',
