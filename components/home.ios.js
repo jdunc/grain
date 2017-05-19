@@ -8,6 +8,7 @@ import {
   AlertIOS,
   PushNotificationIOS,
   TabBarIOS,
+  AsyncStorage,
 } from 'react-native';
 import RNShakeEventIOS from 'react-native-shake-event';
 import NotificationsIOS from 'react-native-notifications';
@@ -20,8 +21,6 @@ export default class Home extends Component {
     super(props)
     this.state = {
       grains: grains,
-      displayNumber: 0,
-      newNumber: -1,
     }
     this.changeGrain = this.changeGrain.bind(this);
   }
@@ -47,45 +46,40 @@ export default class Home extends Component {
   onNotificationOpened(notification) {
       console.log("Notification opened by device user", notification);
   }
-    
-  changeGrain() {
-    console.log('grain changed')
-
-    this.setState({
-      newNumber: Math.floor(Math.random() * this.state.grains.length),
-    });
-    // PushNotificationIOS.scheduleLocalNotification({
-    //   fireDate: new Date(Date.now() + (1 * 1000)).getTime(),
-    //   alertBody: 'in this moment, rediscover your presence: ' + this.state.grains[this.state.newNumber],
-    //   alertTitle: "~ enter the flow ~",
-    //   alertAction: "Click here to open",
-    //   soundName: "chime.aiff",
-    //   category: "actionItem",
-    //   userInfo: { 
-    //   'grainNumber': this.state.newNumber,
-    //   },
-    // })
-  }
   
   componentWillMount() {
     PushNotificationIOS.addEventListener('localNotification', this.onNotificationReceivedForeground.bind(this));
-     RNShakeEventIOS.addEventListener('shake', () => {      
-     });
+
   }
   
   componentDidMount () {
     NotificationsIOS.requestPermissions();
-    if(this.state.newNumber === -1){
-      this.setState({
-        newNumber: Math.floor(Math.random() * this.state.grains.length),
-      }) 
-    }
+    RNShakeEventIOS.addEventListener('shake', () => {
+      this.changeGrain();      
+    });
+    AsyncStorage.getItem("lastGrainNumber").then((value) => {
+      console.log('asyncvalue:' + value);
+        this.setState({
+          "lastGrainNumber": parseInt(value),
+          newNumber: parseInt(value),
+        });
+    }).done();
+    console.log('this.state.newNumber')
     console.log('componentDidMount')
   }
 
   componentWillUnmount() {
       // Don't forget to remove the event listeners to prevent memory leaks! 
       PushNotificationIOS.removeEventListener('localNotification', this.onNotificationReceivedForeground.bind(this));
+      AsyncStorage.setItem("lastGrainNumber", JSON.stringify(this.state.newNumber));
+  }
+  
+  changeGrain() {
+    console.log('grain changed');
+    this.setState({
+      newNumber: Math.floor(Math.random() * this.state.grains.length),
+    });
+    console.log(this.state.newNumber)
   }
 
   render() {

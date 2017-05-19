@@ -116,6 +116,6 @@ const styles = StyleSheet.create({
   menu: {
     flex: 1,
     width: '100%',
-    backgroundColor: 'gray',
+    backgroundColor: 'yellow',
   },
 });

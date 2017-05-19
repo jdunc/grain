@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.3",
+    "react-native-checkbox": "^1.1.0",
     "react-native-notifications": "^1.1.10",
     "react-native-shake-event": "^3.0.0",
     "react-native-shake-event-ios": "^1.0.3"
