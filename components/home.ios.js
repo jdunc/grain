@@ -14,6 +14,8 @@ import RNShakeEventIOS from 'react-native-shake-event';
 import NotificationsIOS from 'react-native-notifications';
 import Icon from 'react-native-vector-icons/FontAwesome';
 let grains = require('../grains');
+import TextFit from "react-native-textfit"
+
 
 export default class Home extends Component {
 
@@ -21,6 +23,9 @@ export default class Home extends Component {
     super(props)
     this.state = {
       grains: grains,
+      welcomeBoxheight: 100,
+      welcomeBoxwidth: 100,
+      newNumber: 0,
     }
     this.changeGrain = this.changeGrain.bind(this);
   }
@@ -85,10 +90,22 @@ export default class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.welcomeBox}>
-          <Text style={styles.welcome}>
-            {this.state.grains[this.state.newNumber]}
-          </Text>  
+        <View 
+          style={styles.welcomeBox}
+          onLayout={(event) => {
+            this.setState({
+              welcomeBoxwidth: event.nativeEvent.layout.width,
+              welcomeBoxheight: event.nativeEvent.layout.height
+            });
+            console.log('layout log' + event.nativeEvent.layout.width);
+          // let {welcomeBoxx, welcomeBoxy, welcomeBoxwidth, welcomeBoxheight} = event.nativeEvent.layout;
+        }}>
+          <Text
+            adjustsFontSizeToFit={true}
+            style={styles.welcome}
+            >
+              {this.state.grains[this.state.newNumber]}
+          </Text>
         </View>
           <Button 
             onPress={this.changeGrain}
@@ -112,12 +129,19 @@ const styles = StyleSheet.create({
   welcomeBox: {
     flex: 15,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    width: '100%',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 80,
     textAlign: 'center',
     margin: 10,
+    padding: 25,
+    paddingTop: 100,
+    paddingBottom: 100,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'blue',
   },
   instructions: {
     textAlign: 'center',

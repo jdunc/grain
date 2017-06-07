@@ -15,13 +15,14 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Home from './components/home'
 import Schedule from './components/schedule'
 import Menu from './components/menu'
+import TextFit from "react-native-textfit"
 
 export default class grain extends Component {
 
   constructor (props) {
     super(props)
     this.state = {
-      selectedTab: 'schedule',
+      selectedTab: 'home',
       notificationNumber: -1,
     }
   }
@@ -86,12 +87,6 @@ export default class grain extends Component {
     return (
       <View style={styles.container}>
           <MainContent selectedTab={this.state.selectedTab} style={styles.content}/>
-          <Menu
-            style={styles.content}
-            selectedTab={this.state.selectedTab}
-            toggleHomeProp={this.toggleHome}
-            toggleScheduleProp={this.toggleSchedule}
-          />
       </View>
     );
   }
