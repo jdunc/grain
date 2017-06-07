@@ -10,14 +10,16 @@ import {
   TabBarIOS,
   AsyncStorage,
   Image,
-  Dimensions
+  Dimensions,
+  TouchableHighlight,
+  ActionSheetIOS
 } from 'react-native';
 import RNShakeEventIOS from 'react-native-shake-event';
 import NotificationsIOS from 'react-native-notifications';
 import Icon from 'react-native-vector-icons/FontAwesome';
 let grains = require('../grains');
-import TextFit from "react-native-textfit"
 var {windowHeight, windowWidth} = Dimensions.get('window');
+
 
 export default class Home extends Component {
 
@@ -88,6 +90,12 @@ export default class Home extends Component {
     });
     console.log(this.state.newNumber)
   }
+  
+  shareScreen() {
+    ActionSheetIOS.showShareActionSheetWithOptions({
+      message: 'hello!'
+    }, () => {}, () => {})
+  }
 
   render() {
     return (
@@ -113,12 +121,24 @@ export default class Home extends Component {
                 {this.state.grains[this.state.newNumber]}
             </Text>
           </View>
+          <View style={styles.bottomMenu}>
             <Button 
               onPress={this.changeGrain}
               title="Next Grain"
               color="#841584"
               style={styles.nextGrain}
             />
+            <TouchableHighlight
+              onPress={() => {this.shareScreen()}}
+            >
+             <Icon
+               title="share"
+               name="share"
+               size={30}
+               style={styles.icon}
+             /> 
+         </TouchableHighlight>
+          </View>
         </View>
       </Image>
     );
@@ -163,7 +183,19 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-  nextGrain: {
-    flex: 5
+  bottomMenu: {
+    flex: 1,
+    flexDirection: 'row', 
+    justifyContent: 'space-between',
+    width: '100%',
   },
+  nextGrain: {
+    width: 50,
+  },
+  icon: {
+    backgroundColor: 'rgba(0,0,0,0)',
+    color: 'white',
+    width: 50,
+
+  }
 });
