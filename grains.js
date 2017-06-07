@@ -4,7 +4,7 @@ let grains = [
 '"ask someone who you kind of know what is their #1 hobby',
 'ask somone to move to Mexico with you, dont smile for a few seconds and see what they say',
 'call someone you love',
-'change your posture,try standing or sit up straight',
+'change your posture, try standing or sit up straight',
 'develop a cool secret handshake with the next person you see',
 'do 5 push ups',
 'do the hokey pokey and you turn yourself around',
