@@ -9,13 +9,15 @@ import {
   PushNotificationIOS,
   TabBarIOS,
   AsyncStorage,
+  Image,
+  Dimensions
 } from 'react-native';
 import RNShakeEventIOS from 'react-native-shake-event';
 import NotificationsIOS from 'react-native-notifications';
 import Icon from 'react-native-vector-icons/FontAwesome';
 let grains = require('../grains');
 import TextFit from "react-native-textfit"
-
+var {windowHeight, windowWidth} = Dimensions.get('window');
 
 export default class Home extends Component {
 
@@ -65,7 +67,7 @@ export default class Home extends Component {
     AsyncStorage.getItem("lastGrainNumber").then((value) => {
       console.log('asyncvalue:' + value);
         this.setState({
-          "lastGrainNumber": parseInt(value),
+          lastGrainNumber: parseInt(value),
           newNumber: parseInt(value),
         });
     }).done();
@@ -89,31 +91,36 @@ export default class Home extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View 
-          style={styles.welcomeBox}
-          onLayout={(event) => {
-            this.setState({
-              welcomeBoxwidth: event.nativeEvent.layout.width,
-              welcomeBoxheight: event.nativeEvent.layout.height
-            });
-            console.log('layout log' + event.nativeEvent.layout.width);
-          // let {welcomeBoxx, welcomeBoxy, welcomeBoxwidth, welcomeBoxheight} = event.nativeEvent.layout;
-        }}>
-          <Text
-            adjustsFontSizeToFit={true}
-            style={styles.welcome}
-            >
-              {this.state.grains[this.state.newNumber]}
-          </Text>
+      <Image 
+        source={require('../img/sunset.png')} 
+        style={styles.backgroundImage}
+      >
+        <View style={styles.container}>
+          <View 
+            style={styles.welcomeBox}
+            onLayout={(event) => {
+              this.setState({
+                welcomeBoxwidth: event.nativeEvent.layout.width,
+                welcomeBoxheight: event.nativeEvent.layout.height
+              });
+              console.log('layout log' + event.nativeEvent.layout.width);
+            // let {welcomeBoxx, welcomeBoxy, welcomeBoxwidth, welcomeBoxheight} = event.nativeEvent.layout;
+          }}>
+            <Text
+              adjustsFontSizeToFit={true}
+              style={styles.welcome}
+              >
+                {this.state.grains[this.state.newNumber]}
+            </Text>
+          </View>
+            <Button 
+              onPress={this.changeGrain}
+              title="Next Grain"
+              color="#841584"
+              style={styles.nextGrain}
+            />
         </View>
-          <Button 
-            onPress={this.changeGrain}
-            title="Next Grain"
-            color="#841584"
-            style={styles.nextGrain}
-          />
-      </View>
+      </Image>
     );
   }
 }
@@ -123,14 +130,21 @@ const styles = StyleSheet.create({
     flex: 15,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-    width: '100%'
+    // backgroundColor: '#F5FCFF',
+    width: Dimensions.get('window').width,
+    backgroundColor: 'rgba(0,0,0,0)',
+
   },
   welcomeBox: {
     flex: 15,
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+  },
+  backgroundImage: {
+    flex: 1,
+    width: null,
+    resizeMode: 'cover',
   },
   welcome: {
     fontSize: 80,
@@ -141,7 +155,8 @@ const styles = StyleSheet.create({
     paddingBottom: 100,
     width: '100%',
     height: '100%',
-    backgroundColor: 'blue',
+    color: 'white',
+    // backgroundColor: 'blue',
   },
   instructions: {
     textAlign: 'center',

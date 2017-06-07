@@ -15,7 +15,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Home from './components/home'
 import Schedule from './components/schedule'
 import Menu from './components/menu'
-import TextFit from "react-native-textfit"
 
 export default class grain extends Component {
 
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    // backgroundColor: '#F5FCFF',
   },
   content: {
     flex: 20,
