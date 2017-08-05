@@ -13,15 +13,15 @@ import RNShakeEventIOS from 'react-native-shake-event';
 import NotificationsIOS from 'react-native-notifications';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Home from './components/home'
-import Schedule from './components/schedule'
 import Menu from './components/menu'
+import Categories from './components/categories'
 
 export default class grain extends Component {
 
   constructor (props) {
     super(props)
     this.state = {
-      selectedTab: 'home',
+      selectedTab: 'categories',
       notificationNumber: -1,
     }
   }
@@ -65,7 +65,7 @@ export default class grain extends Component {
 
   toggleHome = () => {
     this.setState({
-      selectedTab: 'home',
+      selectedTab: 'categories',
     })
   }
   toggleSchedule = () => {
@@ -80,6 +80,8 @@ export default class grain extends Component {
       const selectedTab = props.selectedTab;
       if (selectedTab === 'home') {
         return <Home />;
+      } else if(selectedTab === 'categories'){
+        return <Categories />;
       }
       return <Schedule />;
     }
