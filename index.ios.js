@@ -9,14 +9,11 @@ import {
   PushNotificationIOS,
   TabBarIOS,
 } from 'react-native';
-import RNShakeEventIOS from 'react-native-shake-event';
-import NotificationsIOS from 'react-native-notifications';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Home from './components/home'
 import Schedule from './components/schedule'
 import Menu from './components/menu'
 import Categories from './components/categories'
-
 import TextFit from "react-native-textfit"
 
 export default class grain extends Component {
@@ -26,21 +23,19 @@ export default class grain extends Component {
     this.state = {
       selectedTab: 'home',
       notificationNumber: -1,
+      grainCategory: 'surprise'
+      
     }
+    this._toggleScreen = this._toggleScreen.bind(this);
+    this.toggleSchedule = this.toggleSchedule.bind(this);
+    this.changeTab = this.changeTab.bind(this);
   }
+  
   onNotificationReceivedForeground(notification) {
     console.log("Notification Received - Foreground", notification);
     this.setState({
       notificationNumber: notification._data.grainNumber
     });
-    // AlertIOS.alert(
-    //   'Try This!',
-    //   this.state.grains[notification.grainNumber],
-    //   [{
-    //     text: 'Dismiss',
-    //     onPress: null,
-    //   }]
-    // );
   }
    
   onNotificationReceivedBackground(notification) {
@@ -57,8 +52,6 @@ export default class grain extends Component {
   }
   
   componentDidMount () {
-    NotificationsIOS.requestPermissions();
-    console.log('componentDidMount')
   }
 
   componentWillUnmount() {
@@ -66,11 +59,8 @@ export default class grain extends Component {
       PushNotificationIOS.removeEventListener('localNotification', this.onNotificationReceivedForeground.bind(this));
   }
 
-  toggleHome = () => {
-    this.setState({
-      selectedTab: 'home',
-    })
-  }
+
+  
   toggleSchedule = () => {
     console.log('main page, toggleSchedule')
     this.setState({
@@ -78,17 +68,35 @@ export default class grain extends Component {
     })
   }
 
-  render() {
+  _toggleScreen() {
+      this.setState({
+        selectedTab: 'categories',
+      })
+  }
+  
+  changeTab(category, grainCategory) {
+  this.setState({
+    selectedTab: category,
+    grainCategory: grainCategory
+  })
+}
+
+  render(): React$Element<any> {    
     function MainContent(props) {
       const selectedTab = props.selectedTab;
       if (selectedTab === 'home') {
-        return <Home />;
+        return <Home changeTab={props.changeTab} grainCategory={props.grainCategory} />;
       }
+      else if (selectedTab === 'categories') {
+        return <Categories changeTab={props.changeTab} />;
+      }
+      
       return <Schedule />;
     }
+    
     return (
       <View style={styles.container}>
-          <MainContent selectedTab={this.state.selectedTab} style={styles.content}/>
+          <MainContent selectedTab={this.state.selectedTab} style={styles.content} changeTab={this.changeTab} grainCategory={this.state.grainCategory}/>
       </View>
     );
   }

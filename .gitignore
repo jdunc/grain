@@ -51,3 +51,12 @@ buck-out/
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
+
+grains.js
+grainsCreative.js
+grainsEducation.js
+grainsHome.js
+grainsInner.js
+grainsPhysical.js
+grainsRelationships.js
+
