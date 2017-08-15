@@ -3,6 +3,9 @@ package com.grain;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.brentvatne.react.ReactVideoPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.wix.reactnativenotifications.RNNotificationsPackage;
 import com.jadsonlourenco.RNShakeEvent.RNShakeEventPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -24,6 +27,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ReactVideoPackage(),
+            new VectorIconsPackage(),
+            new RNNotificationsPackage(),
             new RNShakeEventPackage()
       );
     }
